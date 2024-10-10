@@ -6,11 +6,7 @@ import (
 )
 
 func main() {
-	// HandlerFunc type is an adapter to allow the use of ordinary functions as HTTP handlers
-	// If f is a function with the appropriate signature, HandlerFunc(f) is a Handler that calls f.
-	//  By type casting our PlayerServer function with it, we have now implemented the required Handler.
-	// type HandlerFunc func(ResponseWriter, *Request)
-	server := &PlayerServer{}
+	server := &PlayerServer{NewInMemoryPlayerStore()}
 
 	/*
 		ListenAndServe takes a port to listen on a Handler.
