@@ -5,8 +5,11 @@ import (
 	"net/http"
 )
 
+// curl -X POST http://localhost:5001/players/Pepper
+// curl http://localhost:5001/players/Pepper
+// curl http://localhost:5001/league
 func main() {
-	server := &PlayerServer{NewInMemoryPlayerStore()}
+	server := NewPlayerServer(NewInMemoryPlayerStore())
 
 	/*
 		ListenAndServe takes a port to listen on a Handler.
